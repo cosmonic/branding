@@ -1,0 +1,36 @@
+{
+    "name": "branding",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "homepage": "https://github.com/cosmonic/branding#readme",
+    "bugs": {
+        "url": "https://github.com/cosmonic/branding/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cosmonic/branding.git"
+    },
+    "license": "MIT",
+    "author": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rm -rf dist && vite build --config ./.virmator/vite/vite-prod-config.ts && cp dist/index.html dist/404.html",
+        "format": "virmator format write",
+        "prepublishOnly": "npm run test:full",
+        "preview": "npm run build && vite --config ./.virmator/vite/vite-prod-config.ts preview --host",
+        "spellcheck": "virmator spellcheck",
+        "start": "npm install && vite --force --config ./.virmator/vite/vite-dev-config.ts",
+        "test": "tsc --noEmit",
+        "test:full": "npm test && npm run spellcheck && virmator format check"
+    },
+    "dependencies": {
+        "augment-vir": "2.2.1",
+        "element-vir": "5.5.1",
+        "spa-router-vir": "1.2.0"
+    },
+    "devDependencies": {
+        "virmator": "2.0.7",
+        "vite": "2.9.10"
+    }
+}
